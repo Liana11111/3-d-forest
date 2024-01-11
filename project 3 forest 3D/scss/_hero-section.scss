@@ -1,0 +1,87 @@
+.hero-section {
+  perspective: 1000px;
+  overflow: hidden;
+
+  &__container {
+    height: 100vh;
+    min-width: 500px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+  }
+
+  // &__title { 
+  // }
+
+  &__text {
+    text-transform: none;
+    font-family: merriweather-italic-3d;
+    letter-spacing: normal;
+    font-size: calc(var(--index) * 2.5);
+  }
+
+
+  &__item {
+    position: absolute;
+    inset: -5vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .forest {
+    background-image: url('/img/forest.jpg');
+    background-repeat: no-repeat;
+    transform: translateZ(-55px) scale(1.06);
+  }
+
+  .branche {
+    background-image: url('/img/branche.png');
+    transform: translateZ(80px) scale(.88);
+    background-size: cover;
+  }
+
+  .content {
+    transform: translateZ(180px) scale(.88);
+    z-index: 1;
+    text-transform: uppercase;
+    margin-top: calc(var(--index) * 2.4);
+    font-size: calc(var(--index) * 2.8);
+    text-align: center;
+
+  }
+
+  .leaf {
+    background-image: url('/img/leaf.png');
+    transform: translateZ(280px)scale(.88);
+  }
+
+  .rain {
+    background-image: url('/img/rain.png');
+    transform: translateZ(380px) scale(.88);
+    background-size: cover;
+  }
+
+  &__button {
+    font-family: Arial;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: calc(var(--index) * .71);
+    background-color: transparent;
+    color: white;
+    padding: calc(var(--index) * .7) calc(var(--index) * 1.25);
+    border: rgb(255 255 255 / .4) 3px solid;
+    outline: none;
+    border-radius: 10em;
+    cursor: pointer;
+  }
+
+  .leaf,
+  .rain {
+    pointer-events: none;
+  }
+}
